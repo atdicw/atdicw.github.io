@@ -1190,16 +1190,18 @@ div.WordSection1
 
 <p class="MsoNormal" align="center" style="text-align: center">
 <font size="7" color="#CC6600" face="华文行楷">图书馆一楼</font></p>
-<p class="MsoNormal" align="center" style="text-align: center"><font size="6">
-农大OJ：</font><a href="http://ndoj.soarli.top/" target="_blank" rel="noopener"><font size="6">http://ndoj.soarli.top/</font></a></p>
-<p class="MsoNormal" align="center" style="text-align: center"><font size="6">
-农大图书馆：</font><a href="http://lib.henau.edu.cn/" target="_blank" rel="noopener"><font size="6">http://lib.henau.edu.cn/</font></a></p>
-<p class="MsoNormal" align="center" style="text-align: center"><font size="6">
-农大软件正版化平台：</font><a href="http://ms.henau.edu.cn/" target="_blank" rel="noopener"><font size="6">http://ms.henau.edu.cn/</font></a></p>
-<p class="MsoNormal" align="center" style="text-align: center"><font size="6">
-计算机考试系统：</font><a href="http://172.31.0.59/sowerks" target="_blank" rel="noopener"><font size="6">http://172.31.0.59/sowerks</font></a></p>
-<p class="MsoNormal" align="center" style="text-align: center"><font size="6">
-龙喵网：<a href="http://ailongmiao.com/download/" target="_blank" rel="noopener">http://ailongmiao.com/download/</a></font></p>
+<p class="MsoNormal" align="center" style="text-align: center">
+<font face="微软雅黑"><font size="6">农大OJ：</font><a href="http://ndoj.soarli.top/" target="_blank" rel="noopener"><font size="6">http://ndoj.soarli.top/</font></a></font></p>
+<p class="MsoNormal" align="center" style="text-align: center">
+<font face="微软雅黑"><font size="6">农大图书馆：</font><a href="http://lib.henau.edu.cn/" target="_blank" rel="noopener"><font size="6">http://lib.henau.edu.cn/</font></a></font></p>
+<p class="MsoNormal" align="center" style="text-align: center">
+<font face="微软雅黑"><font size="6">农大软件正版化平台：</font><a href="http://ms.henau.edu.cn/" target="_blank" rel="noopener"><font size="6">http://ms.henau.edu.cn/</font></a></font></p>
+<p class="MsoNormal" align="center" style="text-align: center">
+<font face="微软雅黑"><font size="6">计算机考试系统：</font><a href="http://172.31.0.59/sowerks" target="_blank" rel="noopener"><font size="6">http://172.31.0.59/sowerks</font></a></font></p>
+<p class="MsoNormal" align="center" style="text-align: center">
+<font size="6" face="微软雅黑">龙喵网：<a href="http://ailongmiao.com/download/" target="_blank" rel="noopener">http://ailongmiao.com/download/</a></font></p>
+<p class="MsoNormal" align="center" style="text-align: center">
+<font face="微软雅黑" size="6">百度文库下载：<a href="http://www.ebuymed.cn" target="_blank" rel="noopener">http://www.ebuymed.cn</a></font></p>
 <p class="MsoNormal" align="center">&nbsp;</p>
 <p class="MsoNormal" align="center">&nbsp;</p>
 <p class="MsoNormal" align="center" style="text-align: center">
@@ -1387,8 +1389,45 @@ div.WordSection1
             </div>
         </div>
         <footer class="footer">
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
 
+ <span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,11,04,17,00,00); //北京时间2019-11-04 17:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML=" 本站已稳定运行："+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>    
+    <br>
+        Copyright © 2019 soarli 版权所有<br>
     
 </footer>
 
